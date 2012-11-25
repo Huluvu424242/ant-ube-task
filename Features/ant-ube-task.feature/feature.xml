@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="ube.feature"
+      id="ant-ube-task.feature"
       label="Feature"
       version="1.0.0.qualifier"
       provider-name="FunThomas424242">
@@ -18,7 +18,21 @@
    </license>
 
    <plugin
-         id="ube.core"
+         id="ube.dsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="ube.dsl.resource"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="ube.dsl.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
