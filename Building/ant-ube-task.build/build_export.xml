@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="feature_export" basedir="." name="build">
+
+	<property name="eclipse.home.dir" value="C:/Program Files/eclipse/eclipse-SDK-3.7.1-win32-test/" />
+	
+	
+	<!--
+	<property name="ant.core.lib" value="C\:\\Program Files\\eclipse\\eclipse-SDK-3.7.1-win32-test\\plugins\\org.apache.ant_1.8.2.v20110505-1300\\lib\\ant.jar" />
+	<property name="ant.home" value="C\:\\Program Files\\eclipse\\eclipse-SDK-3.7.1-win32-test\\plugins\\org.apache.ant_1.8.2.v20110505-1300"/>
+
+	<property name="ant.file" value="C\:\\Users\\SchubertT006\\git\\ant-ube-task\\Building\\ant-ube-task.build\\build_export.xml"/>
+	<property name="ant.file.build" value="C\:\\Users\\SchubertT006\\git\\ant-ube-task\\Building\\ant-ube-task.build\\build_export.xml"/>
+	<property name="ant.file.type.build" value="file"/>
+	<property name="ant.java.version" value="1.6"/>
+	<property name="ant.library.dir" value="C\:\\Program Files\\eclipse\\eclipse-SDK-3.7.1-win32-test\\plugins\\org.apache.ant_1.8.2.v20110505-1300\\lib"/>
+	
+	[echoproperties] ant.project.default-target=feature_export
+	[echoproperties] ant.project.invoked-targets=feature_export
+	[echoproperties] ant.project.name=build
+	[echoproperties] ant.version=Apache Ant(TM) version 1.8.2 compiled on December 20 2010
+	-->
+	
+	<target name="init" description="Stopp the UBE Framework">
+
+		<path id="eclipse.jars.path">
+			<fileset dir="${eclipse.home.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		<property name="eclipse.jars" refid="eclipse.jars.path" />
+
+		<taskdef name="pde.exportFeatures" classpath="${eclipse.jars}" classname="org.eclipse.equinox.internal.p2.publisher.ant.FeaturesAndBundlesPublisherTask" />
+
+
+	</target>
+ 
+	<!--target name="feature_export" depends="init"-->
+	<target name="feature_export">
+		
+		<!--echoproperties/-->
+		
+		<pde.exportFeatures destination="${basedir}\tmp" exportSource="false" exportType="zip" features="ant-ube-task.feature" filename="ant-ube-task-site_1.0.0.zip" useJARFormat="true" />
+	</target>
+
+
+
+</project>
